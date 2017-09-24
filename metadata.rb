@@ -7,5 +7,5 @@ long_description 'Installs/Configures users, '
 version          '0.1.3'
 
 depends 'frUser'
-depends 'chef-client', '~> 8'
+depends 'chef-client', '~> 8.0'
 depends 'frFreebsd'
