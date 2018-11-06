@@ -19,5 +19,6 @@ include_recipe 'chef-client::config'
 # some utility packages
 include_recipe '::packages'
 
-# if we're running on freebsd, include our specific freebsd customizations
-include_recipe 'frFreebsd' if node[:platform_family] == 'freebsd'
+node_exporter 'main' do
+  action [:enable, :start]
+end

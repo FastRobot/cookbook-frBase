@@ -8,4 +8,4 @@ version          '0.1.3'
 
 depends 'frUser'
 depends 'chef-client', '~> 8.0'
-depends 'frFreebsd'
+depends 'prometheus_exporters', '~> 0.8'
