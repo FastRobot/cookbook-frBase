@@ -4,7 +4,7 @@ maintainer_email 'cookbooks@fastrobot.com'
 license          'apachev2'
 description      'Catchall/initial base role cookbook'
 long_description 'Installs/Configures users, '
-version          '0.1.3'
+version          '0.1.4'
 
 depends 'frUser'
 depends 'chef-client', '~> 8.0'
