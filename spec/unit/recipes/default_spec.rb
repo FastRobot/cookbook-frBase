@@ -20,4 +20,16 @@ describe 'frBase::default' do
     end
 
   end
+  context 'When all attributes are default, on Raspbian 8' do
+
+    let(:chef_run) do
+      runner = ChefSpec::ServerRunner.new(platform: 'raspbian', version: '8.0')
+      runner.converge(described_recipe)
+    end
+
+    it 'converges successfully' do
+      chef_run # This should not raise an error
+    end
+
+  end
 end

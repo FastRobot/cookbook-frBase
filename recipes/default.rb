@@ -19,6 +19,19 @@ include_recipe 'chef-client::config'
 # some utility packages
 include_recipe '::packages'
 
+edit_resource(:link, '/usr/local/sbin/node_exporter') do
+  to "/opt/node_exporter-#{node['prometheus_exporters']['node']['version']}.#{node['prometheus_exporters']['node']['os_arch']}/node_exporter"
+end
+
 node_exporter 'main' do
   action [:enable, :start]
 end
+
+#edit_resource(:link, '/usr/local/sbin/node_exporter') do
+#  to "/opt/node_exporter-#{node['prometheus_exporters']['node']['version']}.#{node['prometheus_exporters']['node']['os_arch']}/node_exporter"
+#end
+
+# has a bogus hardcoded arch link
+#link '/usr/local/sbin/node_exporter' do
+#  to "/opt/node_exporter-#{node['prometheus_exporters']['node']['version']}.linux-amd64/node_exporter"
+#end
