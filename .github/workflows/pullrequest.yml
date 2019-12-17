@@ -1,0 +1,28 @@
+name: 'Chef Cookbook Actions'
+on:
+  - pull_request
+jobs:
+  cookbook:
+    name: 'Cookbook'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v1
+      - name: 'Chef Lint'
+        uses: FastRobot/chef-cookbook-actions@master
+        with:
+          chef_actions_task: 'lint'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Unit Tests'
+        uses: FastRobot/chef-cookbook-actions@master
+        with:
+          chef_actions_task: 'unit'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Kitchen Tests'
+        uses: FastRobot/chef-cookbook-actions@master
+        with:
+          chef_actions_task: 'kitchen'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
