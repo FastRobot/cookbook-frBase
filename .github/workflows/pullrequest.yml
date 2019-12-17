@@ -9,19 +9,19 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v1
       - name: 'Chef Lint'
-        uses: FastRobot/chef-cookbook-actions@master
+        uses: FastRobot/chef-cookbook-action@master
         with:
           chef_actions_task: 'lint'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Unit Tests'
-        uses: FastRobot/chef-cookbook-actions@master
+        uses: FastRobot/chef-cookbook-action@master
         with:
           chef_actions_task: 'unit'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Kitchen Tests'
-        uses: FastRobot/chef-cookbook-actions@master
+        uses: FastRobot/chef-cookbook-action@master
         with:
           chef_actions_task: 'kitchen'
         env:
