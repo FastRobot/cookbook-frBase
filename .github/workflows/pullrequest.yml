@@ -17,7 +17,7 @@ jobs:
       - name: 'Unit Tests'
         uses: FastRobot/chef-cookbook-action@master
         with:
-          chef_actions_task: 'unit'
+          chef_actions_task: 'spec'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Kitchen Tests'
