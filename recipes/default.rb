@@ -4,7 +4,6 @@
 #
 # Copyright (c) 2015 Fast Robot, LLC, Apachev2.
 
-
 include_recipe 'frUser'
 
 # yes, I hate that I'm writing :verify_peer as a string so it will render as a symbol
@@ -27,11 +26,11 @@ node_exporter 'main' do
   action [:enable, :start]
 end
 
-#edit_resource(:link, '/usr/local/sbin/node_exporter') do
+# edit_resource(:link, '/usr/local/sbin/node_exporter') do
 #  to "/opt/node_exporter-#{node['prometheus_exporters']['node']['version']}.#{node['prometheus_exporters']['node']['os_arch']}/node_exporter"
-#end
+# end
 
 # has a bogus hardcoded arch link
-#link '/usr/local/sbin/node_exporter' do
+# link '/usr/local/sbin/node_exporter' do
 #  to "/opt/node_exporter-#{node['prometheus_exporters']['node']['version']}.linux-amd64/node_exporter"
-#end
+# end

@@ -9,9 +9,9 @@ default['prometheus_exporters']['node']['checksum'] = case node['kernel']['machi
 
 # abstract out to get working on armv7
 default['prometheus_exporters']['node']['os_arch'] = case node['kernel']['machine']
-                                                     when "armv7l"
+                                                     when 'armv7l'
                                                        "#{node['os']}-armv7"
-                                                     when "x86_64"
+                                                     when 'x86_64'
                                                        "#{node['os']}-amd64"
                                                      end
 
