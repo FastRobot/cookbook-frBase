@@ -34,3 +34,5 @@ end
 # link '/usr/local/sbin/node_exporter' do
 #  to "/opt/node_exporter-#{node['prometheus_exporters']['node']['version']}.linux-amd64/node_exporter"
 # end
+
+include_recipe '::pi' if node['kernel']['machine'].include?("arm")
